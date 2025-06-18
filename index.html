@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Portofolio PTIK</title>
+  <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
+
+  <!-- Font Awesome -->
+  <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Catamaran:100,200,300,400,500,600,700,800,900" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css?family=Lato:100,300,400,700,900" rel="stylesheet" />
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
+
+  <style>
+    html {
+      scroll-behavior: smooth;
+    }
+
+    .navbar-custom {
+      background-color: purple !important;
+    }
+
+    .navbar-brand {
+      background-color: white;
+      color: purple !important;
+      padding: 5px 10px;
+      border-radius: 8px;
+      font-weight: bold;
+    }
+
+    .navbar-brand:hover {
+      background-color: #e0c4f3;
+    }
+
+.masthead {
+  background-image: url('assets/img/foto6.jpeg'); /* Ganti dengan path gambar kamu */
+  background-size: cover;
+  background-position: center;
+  min-height: 300px;
+  padding: 50px 0;
+  text-align: center;
+  color: white;
+  position: relative;
+  overflow: hidden;
+}
+
+    #starCanvas {
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: 0;
+      width: 100%;
+      height: 100%;
+    }
+
+    .masthead > .container {
+      position: relative;
+      z-index: 1;
+    }
+
+    .masthead img {
+      max-width: 300px;
+      border-radius: 20%;
+      margin-bottom: 20px;
+    }
+
+    .masthead-heading.nama {
+      font-size: 40px;
+      font-weight: 600;
+    }
+
+    .masthead-heading.status {
+      font-size: 30px;
+      font-weight: 400;
+    }
+
+    .masthead-heading.title {
+      font-size: 100px;
+    }
+
+    .masthead-subheading {
+      font-size: 60px;
+    }
+
+    section {
+      padding: 60px 0;
+    }
+
+    .btn-skip {
+      display: block;
+      margin: 40px auto 0;
+      font-size: 1.5rem;
+      background-color: purple;
+      color: white;
+      border: none;
+      border-radius: 50px;
+      padding: 10px 20px;
+      transition: background-color 0.3s;
+    }
+
+    .btn-skip:hover {
+      background-color: #5e1a87;
+    }
+
+    .biodata-card, .tentang-card {
+      background: #d9d9d9;
+      padding: 40px;
+      border-radius: 20px;
+      box-shadow: 0 0 20px rgba(0,0,0,0.1);
+    }
+
+    .biodata-title, .tentang-title {
+      color: purple;
+      font-weight: bold;
+      margin-bottom: 30px;
+      text-align: center;
+    }
+
+    .table th {
+      width: 30%;
+    }
+
+    .sosmed-icons {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      margin-top: 15px;
+    }
+
+    .sosmed-icons a {
+      font-size: 28px;
+      color: #333;
+      transition: 0.3s;
+    }
+
+    .sosmed-icons a:hover {
+      color: #25D366;
+    }
+
+    .sosmed-icons a.instagram:hover {
+      color: #E4405F;
+    }
+  </style>
+</head>
+<body id="page-top">
+
+<nav class="navbar navbar-expand-lg navbar-dark navbar-custom fixed-top">
+  <div class="container px-5">
+    <button class="btn btn-light me-2" onclick="showHome()">
+      <i class="fas fa-home me-1"></i> <strong>MENU</strong>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarResponsive">
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item">
+          <button class="btn btn-light me-2" onclick="showBiodata()">
+            <i class="fas fa-user me-1"></i> <strong>BIODATA</strong>
+          </button>
+        </li>
+        <li class="nav-item">
+          <button class="btn btn-light me-2" onclick="showTentang()">
+            <i class="fas fa-info-circle me-1"></i> <strong>TENTANG SAYA</strong>
+          </button>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<div id="home-page">
+  <header class="masthead">
+    <canvas id="starCanvas"></canvas>
+    <div class="container px-5">
+      <img src="assets/img/foto2.jpg" alt="foto2" class="img-fluid">
+      <h1 class="masthead-heading nama mb-0"><strong>TAUFIK SADEWO</strong></h1>
+      <h2 class="masthead-heading status mb-3">(MAHASISWA UNIVERSITAS BUNG HATTA)</h2>
+      <h3 class="masthead-heading title mb-0" style="color: purple;"><strong>SELAMAT DATANG DI</strong></h3>
+      <h4 class="masthead-heading title mb-0" style="color: purple;"><strong>WEBSITE PTIK 2023</strong></h4>
+    </div>
+  </header>
+
+  <section id="section1">
+    <div class="container px-5">
+      <div class="row gx-5 align-items-center">
+        <div class="col-lg-6 order-lg-2">
+          <img class="img-fluid rounded-circle" src="assets/img/foto1.jpg" alt="..." />
+        </div>
+        <div class="col-lg-6 order-lg-1">
+          <h2 class="display-4 fw-bold">UNIVERSITAS BUNG HATTA</h2>
+          <p>Kampus ini berdiri sejak tahun 1981 hingga saat ini, dan telah memiliki 24 program studi, salah satunya adalah <strong>Prodi Pendidikan Teknik Informatika dan Komputer (PTIK)</strong>.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="section2" style="background-color: #f8f9fa;">
+    <div class="container px-5">
+      <div class="row gx-5 align-items-center">
+        <div class="col-lg-6">
+          <img class="img-fluid rounded-circle" src="assets/img/foto3.jpg" alt="..." />
+        </div>
+        <div class="col-lg-6">
+          <h2 class="display-4 fw-bold"><strong>TENTANG PTIK!</strong></h2>
+          <p>PTIK adalah sebuah prodi yang berasal dari Fakultas Keguruan dan Ilmu Pendidikan. Prodi ini sangat unik karena memiliki dua fokus utama yaitu <strong>Pendidikan dan Teknik Informatika</strong>.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="section3">
+    <div class="container px-5">
+      <div class="row gx-5 align-items-center">
+        <div class="col-lg-6 order-lg-2">
+          <img class="img-fluid rounded-circle" src="assets/img/foto4.jpg" alt="..." />
+        </div>
+        <div class="col-lg-6 order-lg-1">
+          <h2 class="display-4 fw-bold"><strong>TUJUAN PRODI PTIK!</strong></h2>
+          <p>Prodi kami (PTIK) memiliki tujuan untuk menjadikan seseorang ahli dalam bidang informatika dan komputer seperti menjadi <strong>teknisi, programmer, developer, dan juga guru PIK</strong> yang profesional.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
+
+<section id="biodata" style="display: none; background-color: #eee;">
+  <div class="container px-5">
+    <div class="biodata-card">
+      <h2 class="biodata-title">BIODATA DIRI</h2>
+      <table class="table table-bordered">
+        <tr><th>NAMA</th><td>TAUFIK SADEWO</td></tr>
+        <tr><th>TANGGAL LAHIR</th><td>SUKA DAMAI 7 MAI 2005</td></tr>
+        <tr><th>JENIS KELAMIN</th><td>Laki-laki</td></tr>
+        <tr><th>ALAMAT</th><td>Jl. Pendidikan No. 123, Padang</td></tr>
+        <tr><th>Email</th><td>taufiksadewo321@gmail.com</td></tr>
+        <tr><th>STATUS</th><td>MAHASISWA</td></tr>
+        <tr><th>PRODI</th><td>PTIK</td></tr>
+      </table>
+    </div>
+  </div>
+</section>
+
+<section id="tentang" style="display: none; background-color: white; color: black;">
+  <div class="container px-5">
+    <div class="row">
+      <div class="col-md-4">
+        <div class="card mb-4">
+          <div class="card-body text-center">
+            <img src="assets/img/foto5.jpg" alt="Profil" class="img-fluid rounded-circle mb-3" style="width: 200px; height: 200px; object-fit: cover;">
+            <h4 class="card-title">TAUFIK SADEWO</h4>
+            <button class="btn btn-outline-primary w-100 mb-2" onclick="showTENTANG()">TENTANG</button>
+            <button class="btn btn-outline-primary w-100 mb-2" onclick="showHISTORY()">HISTORY</button>
+
+            <!-- Ikon Sosial Media -->
+            <div class="sosmed-icons">
+              <a href="https://wa.me/" target="_blank" title="WhatsApp">
+                <i class="fab fa-whatsapp"></i>
+              </a>
+              <a href="https://www.instagram.com/username" target="_blank" class="instagram" title="Instagram">
+                <i class="fab fa-instagram"></i>
+              </a>
+            </div>
+
+          </div>
+        </div>
+      </div>
+      <div class="col-md-8">
+        <div class="tentang-card" id="tentang-content">
+       </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+  function showTENTANG() {
+    document.getElementById("tentang-content").innerHTML = `
+      <h2 class="tentang-title"><strong>TENTANG SAYA</strong></h2>
+      <p>Halo Semua! Saya Taufik Sadewo, Mahasiswa aktif dari Universitas Bung Hatta pada Program Studi Pendidikan Teknik Informatika dan Komputer (PTIK). Saya memiliki minat yang mendalam terhadap dunia pendidikan teknologi serta pengembangan perangkat lunak, khususnya dalam hal pemrograman, desain antarmuka pengguna (UI/UX), dan teknologi web. Dalam perkuliahan, saya aktif mengikuti berbagai kegiatan akademik maupun non-akademik seperti seminar teknologi, komunitas coding, dan pelatihan digital. Tujuan utama saya adalah menjadi seorang pendidik yang inspiratif, profesional, dan adaptif terhadap perkembangan teknologi informasi, serta mampu mencetak generasi muda yang melek digital dan siap menghadapi era revolusi industri</p>
+    `;
+  }
+
+  function showHISTORY() {
+    document.getElementById("tentang-content").innerHTML = `
+      <h2 class="tentang-title"><strong>HISTORY</strong></h2>
+      <p>Saya memulai pendidikan dasar di SDN 011 TAMBUSAI UTARA, lalu melanjutkan ke SMPN 10 TAMBUSAI UTARA dan SMAN 1 TAMBUSAI UTARA. Setelah lulus, saya diterima di Universitas Bung Hatta pada jurusan (PTIK) dan aktif dalam berbagai kegiatan kampus serta komunitas teknologi. Saya tidak tau hidup saya akan seperti apa yang pasti saya akan mencoba agar hidup ini berguna pada diri saya dan juga orang-orang di sekitar saya.</p>
+    `;
+  }
+
+  function showBiodata() {
+    document.getElementById("home-page").style.display = "none";
+    document.getElementById("biodata").style.display = "block";
+    document.getElementById("tentang").style.display = "none";
+    window.scrollTo(0, 0);
+  }
+
+  function showTentang() {
+    document.getElementById("home-page").style.display = "none";
+    document.getElementById("biodata").style.display = "none";
+    document.getElementById("tentang").style.display = "block";
+    window.scrollTo(0, 0);
+  }
+
+  function showHome() {
+    document.getElementById("home-page").style.display = "block";
+    document.getElementById("biodata").style.display = "none";
+    document.getElementById("tentang").style.display = "none";
+    window.scrollTo(0, 0);
+  }
+
+  window.onload = function () {
+    showHome();
+  };
+
+  // Animasi bintang
+  const canvas = document.getElementById('starCanvas');
+  const ctx = canvas.getContext('2d');
+  let stars = [];
+
+  function resizeCanvas() {
+    canvas.width = document.querySelector('.masthead').offsetWidth;
+    canvas.height = document.querySelector('.masthead').offsetHeight;
+  }
+
+  window.addEventListener('resize', resizeCanvas);
+  resizeCanvas();
+
+  function createStar() {
+    return {
+      x: Math.random() * canvas.width,
+      y: 0,
+      size: Math.random() * 2 + 1,
+      speed: Math.random() * 3 + 2,
+      opacity: Math.random(),
+    };
+  }
+
+  function drawStar(star) {
+    ctx.beginPath();
+    ctx.arc(star.x, star.y, star.size, 0, 2 * Math.PI);
+    ctx.fillStyle = `rgba(255, 255, 255, ${star.opacity})`;
+    ctx.fill();
+  }
+
+  function animateStars() {
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+    if (stars.length < 100 && Math.random() < 0.3) {
+      stars.push(createStar());
+    }
+
+    stars.forEach((star, i) => {
+      star.y += star.speed;
+      drawStar(star);
+      if (star.y > canvas.height) {
+        stars.splice(i, 1);
+      }
+    });
+
+    requestAnimationFrame(animateStars);
+  }
+
+  animateStars();
+</script>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
